@@ -28,7 +28,17 @@ feed: function() {
         this.hunger -= 3;
     }
 },
+checkUp: function() {
+    if (this.fitness <= 3 && this.hunger >= 5) {
+        return 'I am hungry AND i need a walk'
+    } if (this.fitness <= 3) {
+        return 'I need a walk'
+    } if (this.hunger >= 5) {
+        return 'I am hungry'
+    } if (!this.fitness <= 3 && !this.hunger >= 5) {
+      return 'I feel great!'
+    }  
+    },
 };
- 
 
 module.exports = Pet;

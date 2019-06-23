@@ -62,3 +62,22 @@ describe('feed', () => {
         expect(pet.hunger).toEqual(0);
     })
 })
+
+describe('check up', () => {
+    it('checks if the pet needs a walk', () => {
+        const pet = new Pet('Alfred');
+        pet.fitness = 1;
+        expect(pet.checkUp()).toEqual('I need a walk');
+    });
+    it('checks if the pet is hungry', () => {
+        const pet = new Pet('Sally');
+        pet.hunger = 6;
+        expect(pet.checkUp()).toEqual('I am hungry');
+    });
+    it('checks if the pet is hungry and needs a walk', () => {
+        const pet = new Pet('Geoff');
+        pet.hunger = 6
+        pet.fitness = 1
+        expect(pet.checkUp()).toEqual('I am hungry AND i need a walk');
+    });
+});

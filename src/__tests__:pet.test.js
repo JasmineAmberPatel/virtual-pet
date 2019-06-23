@@ -30,5 +30,35 @@ describe('growUp', () => {
         const pet = new Pet('Sandra');
         pet.growUp();
         expect(pet.fitness).toEqual(7);
+    });
+});
+
+describe('walk', () => {
+    it('increases fitness by 4', () => {
+        const pet = new Pet('fido');
+        pet.fitness = 4;
+        pet.walk();
+        expect(pet.fitness).toEqual(8);
+    });
+    it('increases fitness by to a maximum of 10', () => {
+        const pet = new Pet('fido');
+        pet.fitness = 8;
+        pet.walk();
+        expect(pet.fitness).toEqual(10);
+    });
+});
+
+describe('feed', () => {
+    it('increases hunger level by 3', () => {
+        const pet = new Pet('kevin');
+        pet.hunger = 7;
+        pet.feed()
+        expect(pet.hunger).toEqual(4);
+    })
+    it('decreases hunger to lowest hunger level', () => {
+        const pet = new Pet('Sansa');
+        pet.hunger = 2;
+        pet.feed()
+        expect(pet.hunger).toEqual(0);
     })
 })

@@ -5,11 +5,28 @@ function Pet(name) {
     this.fitness = 10;
 }
 
+const maximum_fitness = 10;
+const lowest_hungerLevel = 0;
+
 Pet.prototype = {
 growUp: function() {
     this.age += 1;
     this.hunger += 5;
     this.fitness -= 3;
+},
+walk: function() {
+    if ((this.fitness + 4) <= maximum_fitness) {
+        this.fitness += 4;
+    } else {
+        this.fitness = maximum_fitness;
+    }
+},
+feed: function() {
+    if ((this.hunger - 3) <= lowest_hungerLevel) {
+        this.hunger = lowest_hungerLevel;
+    } else {
+        this.hunger -= 3;
+    }
 },
 };
  

@@ -25,6 +25,9 @@ walk: function() {
     }
 },
 feed: function() {
+    if(!this.isAlive){
+        throw new Error('Your pet is no longer alive :(')
+    }
     if ((this.hunger - 3) <= lowest_hungerLevel) {
         this.hunger = lowest_hungerLevel;
     } else {

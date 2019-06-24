@@ -81,3 +81,26 @@ describe('check up', () => {
         expect(pet.checkUp()).toEqual('I am hungry AND i need a walk');
     });
 });
+
+describe('Death', () => {
+    it('Checks if the pet is alive', () => {
+        const pet = new Pet('Angel');
+        pet.hunger = 10
+        expect(pet.isAlive).toEqual(false);
+    });
+    it('Checks if the pet is alive', () => {
+        const pet = new Pet('Angel');
+        pet.fitness = 0
+        expect(pet.isAlive).toEqual(false);
+    });
+    it('Checks if the pet is alive', () => {
+        const pet = new Pet('Angel');
+        pet.age = 30
+        expect(pet.isAlive).toEqual(false);
+    });
+    it('Checks if the pet is alive', () => {
+        const pet = new Pet('Angel');
+        pet.hunger = 6
+        expect(pet.isAlive).toEqual(true);
+    });
+});

@@ -9,6 +9,9 @@ const maximum_fitness = 10;
 const lowest_hungerLevel = 0;
 
 Pet.prototype = {
+get isAlive() {
+    return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+    },
 growUp: function() {
     this.age += 1;
     this.hunger += 5;

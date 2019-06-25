@@ -91,5 +91,13 @@ describe('pet object', () => {
             expect(pet.isAlive).toEqual(true);
         });
     });
+    describe('Parent', () => {
+        it('Returns the child instance', () => {
+            const parent = new Pet('Dave');
+            const child = new Pet('Lucy');
+            parent.adoptChild(child);
+            expect(parent.children).toEqual([child]);
+        });
+    });
 });
 
